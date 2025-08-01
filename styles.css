@@ -79,12 +79,52 @@ h3 {
   font-size: 1.25rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
 .text-primary {
   color: var(--primary);
 }
 
 .text-muted {
   color: var(--muted-foreground);
+}
+
+.text-green-600 {
+  color: #16a34a;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
 }
 
 /* Utility Classes */
@@ -268,10 +308,6 @@ section {
   flex: 1;
   gap: 1rem;
   justify-content: flex-end;
-}
-
-.mobile-menu {
-  display: none;
 }
 
 /* ===================================
@@ -739,10 +775,6 @@ section {
   .timeline-card {
     margin-left: 3rem !important;
     width: calc(100% - 3rem);
-  }
-
-  .mobile-menu {
-    display: block;
   }
 
   .hero-buttons {
