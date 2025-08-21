@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 :root {
   --color-background: #fff;
   --color-text: #0f0f0f;
@@ -16,7 +14,7 @@
 body {
   background: var(--color-background);
   color: var(--color-text);
-  font: 100%/1.6 'Inter', system-ui, sans-serif;
+  font: 500 100% "Inter", system-ui, sans-serif;
   margin: 0;
   text-rendering: geometricPrecision;
 }
@@ -30,142 +28,206 @@ p {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  max-width: 50rem;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.3;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
 }
 
 h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
 
 h4 {
   font-size: 1rem;
-  font-weight: 600;
+  line-height: 1.25;
 }
 
 p {
-  line-height: 1.6;
+  font-size: 0.875rem;
+  line-height: 1.25;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 72rem;
-  padding: 0 1.5rem;
+h1 + p,
+h2 + p,
+.lede {
+  color: var(--color-muted);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  max-width: 60rem;
 }
 
 section {
   padding: 4rem 0;
 }
 
-.btn {
+.button {
   background: var(--color-text);
   border: 0;
   border-radius: var(--radius);
   color: var(--color-background);
   cursor: pointer;
   display: inline-block;
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   font-weight: 500;
-  padding: 0.75rem 1.5rem;
+  line-height: 1.2;
+  padding: 1rem 1.5rem;
   text-decoration: none;
   transition: opacity 0.2s;
 }
 
-.btn:hover {
+.button:hover {
   opacity: 0.9;
 }
 
-/* Header */
-#header {
-  backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
+/* Page Layout */
 
-#header .container {
+.layer {
+  /* includes header, section, and footer */
   align-items: center;
   display: flex;
-  height: 4rem;
+  justify-content: center;
+  padding: clamp(2rem, 5vw, 4rem);
+}
+.layer-inset {
+  flex: 1;
+  max-width: 72rem;
 }
 
-#logo {
+section .layer-inset {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  text-align: center;
 }
 
-.brand {
-  color: var(--color-text);
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1;
+/* Branding */
+
+.logo {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 10rem;
 }
 
-.tagline {
-  color: var(--color-muted);
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  line-height: 1;
-  text-transform: uppercase;
+.logo-img {
+  height: 3rem;
+}
+
+.logo-business {
+  font-size: 20px;
+}
+
+/* -- Home (index.html) -- */
+
+/* Header */
+
+header .layer-inset {
+  align-items: center;
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
 }
 
 #nav {
   align-items: center;
   display: flex;
-  font-size: 0.875rem;
-  font-weight: 500;
   gap: 2rem;
-  margin-left: 3rem;
 }
 
 .nav-link {
   color: var(--color-muted);
+  position: relative;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
   color: var(--color-text);
 }
 
-#header .btn {
-  margin-left: auto;
+.nav-link.active {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+#header .button {
+  flex-shrink: 0;
 }
 
 /* Hero */
 #hero {
-  background: var(--color-canvas);
   text-align: center;
 }
 
-#hero h1 {
+.hero-benefits {
+  display: flex;
+  gap: 3rem;
+  margin: 1.5rem 0 0;
 }
 
-#hero p {
+.benefit {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-#hero .btn {
+.benefit i {
+  font-size: 20px;
 }
 
-.hero-video {
+.benefit p {
+  color: var(--color-muted);
+  white-space: nowrap;
 }
 
-.hero-video img {
+/* Video */
+.video-container {
+  position: relative;
+  max-width: 60rem;
+}
+
+video {
+  aspect-ratio: 16 / 9;
+  border-radius: 2rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.play-button {
+  align-items: center;
+  backdrop-filter: blur(4px);
+  background: #fff1;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 6rem;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6rem;
+}
+.play-button:hover {
+  background: #fff2;
+}
+.play-button i {
+  color: white;
+  font-size: 2.5rem;
 }
 
 /* Testimonial */
@@ -325,17 +387,17 @@ section {
 .stat-change {
 }
 
-/* CTA */
-#cta {
+/* Reprise */
+#reprise {
 }
 
-#cta h2 {
+#reprise h2 {
 }
 
-#cta p {
+#reprise p {
 }
 
-#cta .btn {
+#reprise .button {
 }
 
 /* Footer */
@@ -348,9 +410,6 @@ section {
 .footer-info {
 }
 
-.footer-logo {
-}
-
 .footer-info p {
 }
 
@@ -360,44 +419,9 @@ section {
 .footer-nav a {
 }
 
-/* About Page */
-#about-hero {
-}
+/* -- Why Telehealth (telehealth.html) -- */
 
-#about-hero h1 {
-}
-
-#about-hero p {
-}
-
-#story {
-}
-
-#story h2 {
-}
-
-#story p {
-}
-
-#story ul {
-}
-
-#story li {
-}
-
-/* Telehealth Page */
-#telehealth-hero {
-}
-
-#telehealth-hero h1 {
-}
-
-#telehealth-hero p {
-}
-
-#telehealth-hero .btn {
-}
-
+/* Comparison */
 #comparison {
 }
 
@@ -437,46 +461,42 @@ section {
 .benefit-item p {
 }
 
-#every-system {
+/* Systems */
+#systems {
 }
 
-#every-system h2 {
+#systems h2 {
 }
 
-#every-system p {
+#systems p {
 }
 
-#still-think {
+/* -- About us (about.html) -- */
+
+/* Story */
+#story {
 }
 
-#still-think h2 {
+#story h2 {
 }
 
-#still-think p {
+#story p {
 }
 
-#still-think .btn {
+#story ul {
 }
 
-/* FAQ Page */
-#faq-hero {
+#story li {
 }
 
-#faq-hero h1 {
-}
+/* -- FAQ (faq.html) -- */
 
-#faq-hero p {
-}
-
-/* Responsive */
+/* responsive */
 @media (max-width: 768px) {
-  #nav {
-    display: none;
-  }
 }
 
 @media (max-width: 480px) {
-  .container {
+  .layer-inset {
     padding: 0 1rem;
   }
 }
