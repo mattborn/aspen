@@ -29,7 +29,7 @@
           <img alt="Aspen" class="logo-img" src="../assets/aspen-logo.svg" />
           <div class="logo-business">Correctional Telehealth</div>
         </div>
-        <nav id="nav">
+        <nav>
           <a href="index.html" class="nav-link active">Home</a>
           <a href="telehealth.html" class="nav-link">Why Telehealth</a>
           <a href="about.html" class="nav-link">About us</a>
@@ -46,7 +46,7 @@
         <p>
           A fully Telehealth solution, purpose-built for small jails. Aspen
           brings corrections-specialized medical expertise to your
-          facility—handling triage, meds, and admin so your team isn't making
+          facility—handling triage, meds, and admin so your team isn’t making
           risky healthcare decisions alone.
         </p>
         <a href="#" class="button">Book a call</a>
@@ -71,7 +71,9 @@
     <section class="layer" id="video">
       <div class="layer-inset">
         <div class="video-container">
-          <video poster="https://res.cloudinary.com/moona/image/upload/q_auto/v1755806027/Aspen/aspen-tv-wall_oxnvko.png">
+          <video
+            poster="https://res.cloudinary.com/moona/image/upload/q_auto/v1755806027/Aspen/aspen-tv-wall_oxnvko.png"
+          >
             <source src="#" type="video/mp4" />
           </video>
           <div class="play-button">
@@ -81,14 +83,17 @@
       </div>
     </section>
 
-    <!-- Testimonial -->
-    <section class="layer" id="testimonial">
+    <!-- Quote -->
+    <section class="layer" id="quote">
       <div class="layer-inset">
-        <blockquote>"It feels like a big weight has been lifted."</blockquote>
-        <div class="author">
-          <div class="author-name">Sheriff Mark Johnson</div>
-          <div class="author-title">
-            County Sheriff, Small Jail Administrator
+        <div class="quote-card">
+          <i class="fas fa-quote-left"></i>
+          <blockquote>It feels like a big weight has been lifted!</blockquote>
+          <div class="author">
+            <div class="author-name">Brian Egeland</div>
+            <div class="author-title">
+              Jail Captain, Rosebud County, Montana
+            </div>
           </div>
         </div>
       </div>
@@ -100,43 +105,52 @@
         <h2>Why Small Jails Get Left Behind</h2>
         <p>
           If you run a jail with fewer than 80 beds, you already know this: most
-          healthcare vendors won't even return your call—let alone solve your
+          healthcare vendors won’t even return your call—let alone solve your
           problems.
         </p>
-        <div class="problems-grid">
+        <div id="problem-cards">
           <div class="problem">
-            <i class="fas fa-scale-balanced"></i>
-            <h3>Cost Prohibitive</h3>
-            <p>
-              On-site care is often too expensive and you usually don't need a
-              full time nurse.
-            </p>
+            <i class="fas fa-sack-dollar"></i>
+            <div class="problem-text">
+              <h3>Cost Prohibitive</h3>
+              <p>
+                On-site care is often too expensive and you usually don’t need a
+                full time nurse.
+              </p>
+            </div>
           </div>
           <div class="problem">
             <i class="fas fa-users"></i>
-            <h3>Overlooked by Big Vendors</h3>
-            <p>
-              Large vendors prioritize the big facilities. Smaller jails just
-              aren't their priority.
-            </p>
+            <div class="problem-text">
+              <h3>Overlooked by Big Vendors</h3>
+              <p>
+                Large vendors prioritize the big facilities. Smaller jails just
+                aren’t their priority.
+              </p>
+            </div>
           </div>
           <div class="problem">
-            <i class="fas fa-heart-pulse"></i>
-            <h3>Non-Corrections Clinicians</h3>
-            <p>
-              Community providers are frequently manipulated by inmates and
-              prescribe unnecessary medications and treatments, generating
-              burden for officers and extra costs.
-            </p>
+            <i class="fas fa-face-confused"></i>
+            <div class="problem-text">
+              <h3>Non-Corrections Clinicians</h3>
+              <p>
+                Community providers are frequently manipulated by inmates and
+                prescribe unnecessary medications and treatments, generating
+                burden for officers and extra costs.
+              </p>
+            </div>
           </div>
           <div class="problem">
-            <i class="fas fa-address-book"></i>
-            <h3>Patchwork Systems</h3>
-            <p>
-              If you don't have medical, your staff ends up triaging inmates and
-              coordinating medical care on their own.
-            </p>
+            <i class="fas fa-scribble"></i>
+            <div class="problem-text">
+              <h3>Patchwork Systems</h3>
+              <p>
+                If you don’t have medical, your staff ends up triaging inmates
+                and coordinating medical care on their own.
+              </p>
+            </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -147,40 +161,40 @@
         <h2>
           Without the right medical team, the facility carries the burden.
         </h2>
-        <div class="burden-grid">
-          <div class="burden-item">
+        <div id="burden-grid">
+          <div class="burden">
             <h4>Overloaded Officers</h4>
             <p>
               Officers get pulled off their core duties to manage transports,
               sit at ERs, and track down prescriptions.
             </p>
           </div>
-          <div class="burden-item">
+          <div class="burden">
             <h4>Increased Risk</h4>
             <p>
               Your people are making triage decisions without medical training —
               and if something goes wrong, the liability is yours.
             </p>
           </div>
-          <div class="burden-item">
+          <div class="burden">
             <h4>Con Games</h4>
             <p>
               Inmates manipulate weaknesses in the system — gaming their way
-              into transport or meds they don't need.
+              into transport or meds they don’t need.
             </p>
           </div>
-          <div class="burden-item">
+          <div class="burden">
             <h4>Too Many Meds, Too Much Risk</h4>
             <p>
               Community doctors often prescribe medications and treatments that
-              aren't necessary in a jail setting. That leads to more pills, more
+              aren’t necessary in a jail setting. That leads to more pills, more
               cheeking, more risk, and more time spent on med pass.
             </p>
           </div>
-          <div class="burden-item">
+          <div class="burden">
             <h4>Administrative Burden</h4>
             <p>
-              Chasing down prescriptions, providers, and paperwork shouldn't
+              Chasing down prescriptions, providers, and paperwork shouldn’t
               fall on your jail staff. But it does.
             </p>
           </div>
@@ -195,33 +209,39 @@
         <p class="lede">
           The complete inmate medical care system built for small jails.
         </p>
-        <div class="solution-grid">
-          <div class="solution-item">
+        <div id="solution-cards">
+          <div class="solution">
             <i class="fas fa-laptop-medical"></i>
-            <h3>Fully Telehealth, by Design</h3>
-            <p>
-              We don't try to retrofit a "big-jail" model into a small facility.
-              Medical care is delivered securely, reliably, and entirely
-              remotely.
-            </p>
+            <div class="solution-text">
+              <h3>Fully Telehealth, by Design</h3>
+              <p>
+                We don’t try to retrofit a “big-jail” model into a small facility.
+                Medical care is delivered securely, reliably, and entirely
+                remotely.
+              </p>
+            </div>
           </div>
-          <div class="solution-item">
+          <div class="solution">
             <i class="fas fa-clock"></i>
-            <h3>24/7 Coverage</h3>
-            <p>
-              No gaps. No burnout. No single point of failure. Aspen gives you a
-              full team. Always available.
-            </p>
+            <div class="solution-text">
+              <h3>24/7 Coverage</h3>
+              <p>
+                No gaps. No burnout. No single point of failure. Aspen gives you a
+                full team. Always available.
+              </p>
+            </div>
           </div>
-          <div class="solution-item">
+          <div class="solution">
             <i class="fas fa-user-nurse"></i>
-            <h3>Corrections-Specialized Care</h3>
-            <p>
-              Our team, protocols, and care decisions are built for the jail
-              environment. We know how to spot manipulation, prescribe
-              appropriate medications, and make decisions that actually work in
-              custody settings.
-            </p>
+            <div class="solution-text">
+              <h3>Corrections-Specialized Care</h3>
+              <p>
+                Our team, protocols, and care decisions are built for the jail
+                environment. We know how to spot manipulation, prescribe
+                appropriate medications, and make decisions that actually work in
+                custody settings.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -231,75 +251,109 @@
     <section class="layer" id="features">
       <div class="layer-inset">
         <h2>What You Get with Aspen</h2>
-        <div class="features-grid">
-          <div class="feature">
-            <h3>Daily Nursing Sessions</h3>
-            <p>
-              Every day, our nurses triage new complaints and follow up on
-              existing issues.
-            </p>
+        <div id="features-grid">
+          <div class="features-column">
+            <div class="feature">
+              <div class="feature-number">1</div>
+              <div class="feature-text">
+                <h4>Daily Nursing Sessions</h4>
+                <p>
+                  Every day, our nurses triage new complaints and follow up on
+                  existing issues.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-number">2</div>
+              <div class="feature-text">
+                <h4>Weekly Provider Sessions</h4>
+                <p>
+                  Our medical providers conduct weekly medical visits with inmates.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-number">3</div>
+              <div class="feature-text">
+                <h4>Weekly Behavioral Health Sessions</h4>
+                <p>
+                  Regular mental health evaluations and ongoing support for at-risk
+                  inmates.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-number">4</div>
+              <div class="feature-text">
+                <h4>24/7 On-Call Access</h4>
+                <p>
+                  When something happens outside of business hours, Aspen is
+                  available — immediately.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-number">5</div>
+              <div class="feature-text">
+                <h4>Suicide Evaluation and Clearing</h4>
+                <p>
+                  Aspen handles suicide risk evaluations and clearance
+                  determinations, making these decisions for your team.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="feature">
-            <h3>Weekly Provider Sessions</h3>
-            <p>
-              Our medical providers conduct weekly medical visits with inmates.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>Weekly Behavioral Health Sessions</h3>
-            <p>
-              Regular mental health evaluations and ongoing support for at-risk
-              inmates.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>24/7 On-Call Access</h3>
-            <p>
-              When something happens outside of business hours, Aspen is
-              available — immediately.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>Suicide Evaluation and Clearing</h3>
-            <p>
-              Aspen handles suicide risk evaluations and clearance
-              determinations, making these decisions for your team.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>Training for Officers & Jail Staff</h3>
-            <p>
-              We train your team to identify when they should call us,
-              understand care workflows, and avoid unnecessary escalations.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>Administrative Ownership</h3>
-            <p>
-              We take over all medical coordination — prescriptions, medical
-              records, referrals, and provider follow-up. It's off your plate.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>Electronic Medical Record (EMR)</h3>
-            <p>
-              All care is documented and tracked in a modern, secure EMR that
-              connects directly with your JMS.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>Corrections-Specialized Medical Staff</h3>
-            <p>
-              We only hire nurses and providers with jail experience — no
-              learning curve, no rookie mistakes.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>Shift in Liability to Aspen</h3>
-            <p>
-              When we make the medical call, the liability is on us — not your
-              team or your facility.
-            </p>
+          <div class="features-column">
+            <div class="feature">
+              <div class="feature-number">6</div>
+              <div class="feature-text">
+                <h4>Training for Officers & Jail Staff</h4>
+                <p>
+                  We train your team to identify when they should call us,
+                  understand care workflows, and avoid unnecessary escalations.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-number">7</div>
+              <div class="feature-text">
+                <h4>Administrative Ownership</h4>
+                <p>
+                  We take over all medical coordination — prescriptions, medical
+                  records, referrals, and provider follow-up. It’s off your plate.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-number">8</div>
+              <div class="feature-text">
+                <h4>Electronic Medical Record (EMR)</h4>
+                <p>
+                  All care is documented and tracked in a modern, secure EMR that
+                  connects directly with your JMS.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-number">9</div>
+              <div class="feature-text">
+                <h4>Corrections-Specialized Medical Staff</h4>
+                <p>
+                  We only hire nurses and providers with jail experience — no
+                  learning curve, no rookie mistakes.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-number">10</div>
+              <div class="feature-text">
+                <h4>Shift in Liability to Aspen</h4>
+                <p>
+                  When we make the medical call, the liability is on us — not your
+                  team or your facility.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -309,62 +363,80 @@
     <section class="layer" id="timeline">
       <div class="layer-inset">
         <h2>What changes. And when.</h2>
-        <p>Aspen doesn't take months to ramp up. Relief starts on day one.</p>
-        <div class="timeline-items">
+        <p>Aspen doesn’t take months to ramp up. Relief starts on day one.</p>
+        <div id="timeline-items">
           <div class="timeline-item">
-            <div class="timeline-marker">Day 1</div>
-            <h3>A 24 hour medical partner</h3>
-            <p>
-              Instead of sending inmates out or guessing what to do, your staff
-              can call Aspen. You've got backup and a real medical team taking
-              responsibility.
-            </p>
+            <div class="timeline-text">
+              <div class="timeline-marker">Day 1</div>
+              <h3>A 24-hour medical partner</h3>
+              <p>
+                Instead of sending inmates out or guessing what to do, your staff
+                can call Aspen. You’ve got backup and a real medical team taking
+                responsibility.
+              </p>
+            </div>
+            <i class="fas fa-circle"></i>
           </div>
           <div class="timeline-item">
-            <div class="timeline-marker">Week 1</div>
-            <h3>Fewer transports, fewer disruptions</h3>
-            <p>
-              We start triaging complaints daily and seeing patients via
-              telehealth. Many issues that used to trigger a trip to the
-              hospital now get handled inside the jail.
-            </p>
+            <div class="timeline-text">
+              <div class="timeline-marker">Week 1</div>
+              <h3>Fewer transports, fewer disruptions</h3>
+              <p>
+                We start triaging complaints daily and seeing patients via
+                telehealth. Many issues that used to trigger a trip to the
+                hospital now get handled inside the jail.
+              </p>
+            </div>
+            <i class="fas fa-circle"></i>
           </div>
           <div class="timeline-item">
-            <div class="timeline-marker">Month 1</div>
-            <h3>Fewer meds. Shorter med pass.</h3>
-            <p>
-              We review prescriptions and eliminate inappropriate or unnecessary
-              meds. You'll likely see a 20%-50% drop in total meds and med pass
-              time.
-            </p>
+            <div class="timeline-text">
+              <div class="timeline-marker">Month 1</div>
+              <h3>Fewer meds. Shorter med pass.</h3>
+              <p>
+                We review prescriptions and eliminate inappropriate or unnecessary
+                meds. You’ll likely see a 20%-50% drop in total meds and med pass
+                time.
+              </p>
+            </div>
+            <i class="fas fa-circle"></i>
           </div>
           <div class="timeline-item">
-            <div class="timeline-marker">Month 6</div>
-            <h3>Less manipulation.</h3>
-            <p>
-              With consistent policies, fair boundaries, and caring but firm
-              providers, the incentive to game the system drops dramatically.
-              False complaints drop, and the tone in the facility starts to
-              shift.
-            </p>
+            <div class="timeline-text">
+              <div class="timeline-marker">Month 6</div>
+              <h3>Less manipulation.</h3>
+              <p>
+                With consistent policies, fair boundaries, and caring but firm
+                providers, the incentive to game the system drops dramatically.
+                False complaints drop, and the tone in the facility starts to
+                shift.
+              </p>
+            </div>
+            <i class="fas fa-circle"></i>
           </div>
           <div class="timeline-item">
-            <div class="timeline-marker">Year 1</div>
-            <h3>More officers available for core duties</h3>
-            <p>
-              Fewer transports, less paperwork, and fewer medical distractions.
-              Your staff gets back to doing what they were hired to do, keeping
-              the jail and the community safe.
-            </p>
+            <div class="timeline-text">
+              <div class="timeline-marker">Year 1</div>
+              <h3>More officers available for core duties</h3>
+              <p>
+                Fewer transports, less paperwork, and fewer medical distractions.
+                Your staff gets back to doing what they were hired to do, keeping
+                the jail and the community safe.
+              </p>
+            </div>
+            <i class="fas fa-circle"></i>
           </div>
           <div class="timeline-item">
-            <div class="timeline-marker">Year 10</div>
-            <h3>The lawsuit that never came</h3>
-            <p>
-              Every decision Aspen makes? Our responsibility. You avoid the
-              catastrophic liability event that could've cost your facility
-              greatly.
-            </p>
+            <div class="timeline-text">
+              <div class="timeline-marker">Year 10</div>
+              <h3>The lawsuit that never came</h3>
+              <p>
+                Every decision Aspen makes? Our responsibility. You avoid the
+                catastrophic liability event that could’ve cost your facility
+                greatly.
+              </p>
+            </div>
+            <i class="fas fa-circle"></i>
           </div>
         </div>
       </div>
@@ -375,21 +447,51 @@
       <div class="layer-inset">
         <h2>Proven results</h2>
         <p>Results from one county jail with 18 ADP.</p>
-        <div class="stats-grid">
-          <div class="stat">
-            <h3>Medical transports</h3>
-            <div class="stat-number">10 → 2</div>
-            <div class="stat-change">↓ 80%</div>
+        <div id="results-cards">
+          <div class="result">
+            <div class="result-heading">
+              <h4>Medical Transports</h4>
+              <i class="fas fa-ambulance"></i>
+            </div>
+            <div class="result-numbers">
+              <span>10</span>
+              <i class="fas fa-arrow-right"></i>
+              <span class="result-to">2</span>
+            </div>
+            <div class="result-change">
+              <i class="fas fa-arrow-trend-down"></i>
+              <span>80% improvement</span>
+            </div>
           </div>
-          <div class="stat">
-            <h3>Medications administered</h3>
-            <div class="stat-number">58 → 27</div>
-            <div class="stat-change">↓ 53%</div>
+          <div class="result">
+            <div class="result-heading">
+              <h4>Medications Administered</h4>
+              <i class="fas fa-pills"></i>
+            </div>
+            <div class="result-numbers">
+              <span>58</span>
+              <i class="fas fa-arrow-right"></i>
+              <span class="result-to">27</span>
+            </div>
+            <div class="result-change">
+              <i class="fas fa-arrow-trend-down"></i>
+              <span>53% improvement</span>
+            </div>
           </div>
-          <div class="stat">
-            <h3>Officer stress level</h3>
-            <div class="stat-number">10/10 → 4/10</div>
-            <div class="stat-change">↓ 60%</div>
+          <div class="result">
+            <div class="result-heading">
+              <h4>Officer Stress Level</h4>
+              <i class="fas fa-user-police"></i>
+            </div>
+            <div class="result-numbers">
+              <span>10/10</span>
+              <i class="fas fa-arrow-right"></i>
+              <span class="result-to">4/10</span>
+            </div>
+            <div class="result-change">
+              <i class="fas fa-arrow-trend-down"></i>
+              <span>60% improvement</span>
+            </div>
           </div>
         </div>
       </div>
@@ -410,17 +512,25 @@
     <!-- Footer -->
     <footer class="layer" id="footer">
       <div class="layer-inset">
-        <div class="footer-info">
+        <div class="footer-row">
           <div class="logo">
             <img alt="Aspen" class="logo-img" src="../assets/aspen-logo.svg" />
             <div class="logo-business">Correctional Telehealth</div>
           </div>
-          <p>&copy; 2025 Aspen Medical. All rights reserved.</p>
+          <nav>
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="telehealth.html" class="nav-link">Why Telehealth</a>
+            <a href="about.html" class="nav-link">About us</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+          </nav>
         </div>
-        <nav class="footer-nav">
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
-        </nav>
+        <div class="footer-row">
+          <p class="footer-legal">&copy; 2025 Aspen Medical. All rights reserved.</p>
+          <nav class="footer-nav">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+          </nav>
+        </div>
       </div>
     </footer>
   </body>
