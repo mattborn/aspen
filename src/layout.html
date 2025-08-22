@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ - Aspen</title>
-    <meta name="description" content="Frequently Asked Questions" />
+    <title>{title}</title>
+    <meta name="description" content="{description}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,58 +20,46 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="layer" id="header">
+    <header class="layer">
       <div class="layer-inset">
         <div class="logo">
           <img alt="Aspen" class="logo-img" src="../assets/aspen-logo.svg" />
           <div class="logo-business">Correctional Telehealth</div>
         </div>
-        <nav id="nav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="telehealth.html" class="nav-link">Why Telehealth</a>
-          <a href="about.html" class="nav-link">About us</a>
-          <a href="faq.html" class="nav-link active">FAQ</a>
+        <nav>
+          <a href="index.html" class="nav-link {home-active}">Home</a>
+          <a href="telehealth.html" class="nav-link {telehealth-active}">Why Telehealth</a>
+          <a href="about.html" class="nav-link {about-active}">About us</a>
+          <a href="faq.html" class="nav-link {faq-active}">FAQ</a>
         </nav>
         <a href="#" class="button">Book a call</a>
       </div>
     </header>
 
-    <main>
-      <!-- Hero -->
-      <section class="layer" id="hero">
-        <div class="layer-inset">
-          <h1>Frequently Asked Questions</h1>
-          <p>Find answers</p>
-        </div>
-      </section>
-
-      <!-- Reprise -->
-      <section class="layer" id="reprise">
-        <div class="layer-inset">
-          <h2>Ready to Lift the Weight?</h2>
-          <p>
-            Schedule a call to learn how Aspen can bring reliable, expert
-            medical care to your jail.
-          </p>
-          <a href="#" class="button">Book a call</a>
-        </div>
-      </section>
-    </main>
+    {content}
 
     <!-- Footer -->
     <footer class="layer" id="footer">
       <div class="layer-inset">
-        <div class="footer-info">
+        <div class="footer-row">
           <div class="logo">
             <img alt="Aspen" class="logo-img" src="../assets/aspen-logo.svg" />
             <div class="logo-business">Correctional Telehealth</div>
           </div>
-          <p>&copy; 2025 Aspen Medical. All rights reserved.</p>
+          <nav>
+            <a href="index.html" class="nav-link {home-active}">Home</a>
+            <a href="telehealth.html" class="nav-link {telehealth-active}">Why Telehealth</a>
+            <a href="about.html" class="nav-link {about-active}">About us</a>
+            <a href="faq.html" class="nav-link {faq-active}">FAQ</a>
+          </nav>
         </div>
-        <nav class="footer-nav">
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
-        </nav>
+        <div class="footer-row">
+          <p class="footer-legal">&copy; 2025 Aspen Medical. All rights reserved.</p>
+          <nav class="footer-nav">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+          </nav>
+        </div>
       </div>
     </footer>
   </body>
