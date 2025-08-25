@@ -5,6 +5,7 @@
   --color-light: rgba(0, 0, 17, 0.1); /* #0000111a - 10% */
   --color-lighter: rgba(0, 0, 17, 0.05); /* #0000110d - 5% */
   --color-lightest: rgb(255, 255, 255); /* #fff */
+  --padding: clamp(1rem, 3vw, 2rem);
   --radius: 0.5rem;
 }
 
@@ -14,10 +15,10 @@
 
 body {
   background: var(--color-lightest)
-    url('https://res.cloudinary.com/moona/image/upload/v1755836203/Aspen/aspen-footer_zs6wwj.jpg')
+    url("https://res.cloudinary.com/moona/image/upload/v1755836203/Aspen/aspen-footer_zs6wwj.jpg")
     no-repeat bottom center / contain;
   color: var(--color-darkest);
-  font: 500 100% 'Inter', system-ui, sans-serif;
+  font: 500 100% "Inter", system-ui, sans-serif;
   letter-spacing: 0.01em;
   margin: 0;
   min-height: 100vh;
@@ -127,7 +128,7 @@ section .layer-inset {
   align-self: stretch;
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(1rem, 3vw, 2rem);
+  gap: var(--padding);
   padding: clamp(0.5rem, 3vw, 2rem) 0 0;
 }
 
@@ -273,7 +274,7 @@ video {
   font-size: 2rem;
 }
 .quote-card blockquote {
-  font: italic 2rem 'Georgia', serif;
+  font: italic 2rem "Georgia", serif;
   line-height: 1.25;
 }
 
@@ -413,7 +414,7 @@ video {
 #timeline-items::before {
   background: var(--color-light);
   bottom: 0;
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   top: 0;
@@ -585,7 +586,7 @@ video {
   text-align: left;
 }
 .compare-item::before {
-  content: '•';
+  content: "•";
   left: 0;
   position: absolute;
 }
@@ -619,7 +620,45 @@ video {
 
 /* -- FAQ (faq.html) -- */
 
-/* responsive */
+/* FAQ */
+#faq-items {
+  border-radius: 1rem;
+  border: 1px solid var(--color-light);
+  cursor: pointer;
+  max-width: 50rem;
+  overflow: hidden;
+  text-align: left;
+}
+
+details:not(:last-child) {
+  border-bottom: 1px solid var(--color-light);
+}
+details:hover {
+  background: var(--color-lighter);
+}
+summary {
+  display: flex;
+  font-size: 1.25rem;
+  gap: 1rem;
+  justify-content: space-between;
+  list-style: none;
+  padding: var(--padding);
+}
+summary::after {
+  content: "\f107";
+  font: var(--fa-font-regular);
+  text-rendering: auto;
+  transition: transform 0.2s;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+details p {
+  padding: 0 var(--padding) var(--padding);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   /* Header/Nav */
   header.layer {
@@ -703,11 +742,11 @@ video {
   .compare-grid {
     flex-direction: column;
   }
-  
+
   .compare-list {
     grid-template-rows: none;
   }
-  
+
   /* Footer */
   .footer-row {
     flex-direction: column;
