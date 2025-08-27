@@ -1,5 +1,4 @@
 const fs = require('fs')
-const path = require('path')
 
 // Read layout template
 const layout = fs.readFileSync('./src/layout.html', 'utf8')
@@ -40,21 +39,23 @@ const pages = {
   },
 }
 
-// Create build directory if it doesn't exist
-if (!fs.existsSync('./build')) {
-  fs.mkdirSync('./build')
-}
+// Create build directory
+if (!fs.existsSync('./build')) fs.mkdirSync('./build')
 
-// Build each page
-Object.entries(pages).forEach(([filename, config]) => {
-  const srcPath = `./src/${filename}`
-
-  if (fs.existsSync(srcPath)) {
-    // Read page content
+// Copy all files from src to build
+fs.readdirSync('./src').forEach(file => {
+  const srcPath = `./src/${file}`
+  const buildPath = `./build/${file}`
+  
+  // Skip layout.html
+  if (file === 'layout.html') return
+  
+  // Process HTML files with layout
+  if (file.endsWith('.html') && pages[file]) {
     const content = fs.readFileSync(srcPath, 'utf8')
-
-    // Replace placeholders in layout
-    let html = layout
+    const config = pages[file]
+    
+    const html = layout
       .replace('{title}', config.title)
       .replace('{description}', config.description)
       .replace('{content}', content)
@@ -62,20 +63,15 @@ Object.entries(pages).forEach(([filename, config]) => {
       .replace(/{telehealth-active}/g, config.telehealthActive)
       .replace(/{about-active}/g, config.aboutActive)
       .replace(/{faq-active}/g, config.faqActive)
-
-    // Write to build
-    fs.writeFileSync(`./build/${filename}`, html)
-    console.log(`✅ Built ${filename}`)
+    
+    fs.writeFileSync(buildPath, html)
+    console.log(`✅ Built ${file}`)
   } else {
-    console.log(`⚠️  Source file ${srcPath} not found`)
+    // Copy all other files as-is
+    fs.copyFileSync(srcPath, buildPath)
+    console.log(`✅ Copied ${file}`)
   }
 })
-
-// Copy CSS and assets
-if (fs.existsSync('./src/styles.css')) {
-  fs.copyFileSync('./src/styles.css', './build/styles.css')
-  console.log('✅ Copied styles.css')
-}
 
 // Copy CNAME if it exists
 if (fs.existsSync('./CNAME')) {

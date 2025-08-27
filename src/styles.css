@@ -5,6 +5,7 @@
   --color-light: rgba(0, 0, 17, 0.1); /* #0000111a - 10% */
   --color-lighter: rgba(0, 0, 17, 0.05); /* #0000110d - 5% */
   --color-lightest: rgb(255, 255, 255); /* #fff */
+  --color-success: #0c9;
   --padding: clamp(1rem, 3vw, 2rem);
   --radius: 0.5rem;
 }
@@ -34,6 +35,11 @@ p,
 blockquote {
   margin: 0;
   text-wrap: balance;
+}
+
+a {
+  color: var(--color-success);
+  text-decoration: none;
 }
 
 h1 {
@@ -460,6 +466,13 @@ video {
 
 /* Results */
 
+.results-image {
+  aspect-ratio: 2 / 1;
+  border-radius: 2rem;
+  object-fit: cover;
+  width: 100%;
+}
+
 .result-card {
   gap: 0.5rem;
 }
@@ -488,13 +501,19 @@ video {
   gap: 0.5rem;
 }
 
-.result-to {
-  color: #00cc99;
+.result-to,
+.result-suffix {
+  align-self: baseline;
+  color: var(--color-success);
+}
+
+.result-suffix {
+  font-size: 1rem;
 }
 
 .result-change {
   align-items: center;
-  color: #00cc99;
+  color: var(--color-success);
   display: flex;
   gap: 0.5rem;
 }
