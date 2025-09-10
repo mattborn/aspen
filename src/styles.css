@@ -663,6 +663,9 @@ summary {
   list-style: none;
   padding: var(--padding);
 }
+summary::-webkit-details-marker {
+  display: none;
+}
 summary::after {
   content: "\f107";
   font: var(--fa-font-regular);
