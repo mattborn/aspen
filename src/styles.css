@@ -1,10 +1,12 @@
 :root {
-  --color-darkest: rgba(0, 0, 17, 0.9); /* #000011e5 - 90% */
-  --color-darker: rgba(0, 0, 17, 0.7); /* #000011b2 - 70% */
-  --color-half: rgba(0, 0, 17, 0.5); /* #00001180 - 50% */
-  --color-light: rgba(0, 0, 17, 0.1); /* #0000111a - 10% */
-  --color-lighter: rgba(0, 0, 17, 0.05); /* #0000110d - 5% */
+  --color-nandor: rgb(63, 83, 73); /* #3f5349 */
+  --color-darkest: rgba(63, 83, 73, 0.9); /* #000011e5 - 90% */
+  --color-darker: rgba(63, 83, 73, 0.7); /* #000011b2 - 70% */
+  --color-half: rgba(63, 83, 73, 0.5); /* #00001180 - 50% */
+  --color-light: rgba(63, 83, 73, 0.1); /* #0000111a - 10% */
+  --color-lighter: rgba(63, 83, 73, 0.05); /* #0000110d - 5% */
   --color-lightest: rgb(255, 255, 255); /* #fff */
+  --color-pampas: #f5f3f1;
   --color-success: #0c9;
   --padding: clamp(1rem, 3vw, 2rem);
   --radius: 0.5rem;
@@ -16,15 +18,28 @@
 
 body {
   background: var(--color-lightest)
-    url("https://res.cloudinary.com/moona/image/upload/v1755836203/Aspen/aspen-footer_zs6wwj.jpg")
+    url('https://res.cloudinary.com/moona/image/upload/v1755836203/Aspen/aspen-footer_zs6wwj.jpg')
     no-repeat bottom center / contain;
   color: var(--color-darkest);
-  font: 500 100% "Inter", system-ui, sans-serif;
+  font: 500 100% 'Inter', system-ui, sans-serif;
   letter-spacing: 0.01em;
   margin: 0;
   min-height: 100vh;
   padding: 0 0 clamp(15rem, 50vw, 64rem);
   text-rendering: geometricPrecision;
+  position: relative;
+}
+
+body::before {
+  background: linear-gradient(to bottom, transparent, rgb(63, 83, 73) 20%);
+  bottom: 0;
+  content: '';
+  height: clamp(20rem, 60vw, 80rem);
+  left: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
 }
 
 h1,
@@ -38,7 +53,7 @@ blockquote {
 }
 
 a {
-  color: var(--color-success);
+  color: inherit;
   text-decoration: none;
 }
 
@@ -91,7 +106,7 @@ section {
 }
 
 .button {
-  background: var(--color-darkest);
+  background: var(--color-nandor);
   border: 0;
   border-radius: var(--radius);
   color: var(--color-lightest);
@@ -151,20 +166,54 @@ section .layer-inset {
 
 /* Branding */
 
+.header-branding,
+.footer-branding {
+  align-items: stretch;
+  display: flex;
+  gap: 1rem;
+}
+
+.badge {
+  align-self: flex-start;
+  aspect-ratio: 3/4;
+  background: #cea358;
+  border-radius: var(--radius);
+  height: 5.5rem;
+  object-fit: contain;
+}
+
+.solution-branding {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.solution-badge {
+  aspect-ratio: 3/4;
+  height: 5.5rem;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
 .logo {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 12px;
+  opacity: 0.9;
   width: 10rem;
 }
 
 .logo-img {
-  height: 3rem;
+  height: 2.5rem;
 }
 
 .logo-business {
-  font-size: 20px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  line-height: 20px;
+  text-transform: uppercase;
 }
 
 /* -- Home (index.html) -- */
@@ -280,7 +329,7 @@ video {
   font-size: 2rem;
 }
 .quote-card blockquote {
-  font: italic 2rem "Georgia", serif;
+  font: italic 2rem 'Georgia', serif;
   line-height: 1.25;
 }
 
@@ -420,7 +469,7 @@ video {
 #timeline-items::before {
   background: var(--color-light);
   bottom: 0;
-  content: "";
+  content: '';
   left: 50%;
   position: absolute;
   top: 0;
@@ -605,7 +654,7 @@ video {
   text-align: left;
 }
 .compare-item::before {
-  content: "•";
+  content: '•';
   left: 0;
   position: absolute;
 }
@@ -667,7 +716,7 @@ summary::-webkit-details-marker {
   display: none;
 }
 summary::after {
-  content: "\f107";
+  content: '\f107';
   font: var(--fa-font-regular);
   text-rendering: auto;
   transition: transform 0.2s;
