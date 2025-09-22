@@ -7,9 +7,19 @@
   --color-lighter: rgba(63, 83, 73, 0.05); /* #0000110d - 5% */
   --color-lightest: rgb(255, 255, 255); /* #fff */
   --color-pampas: #f5f3f1;
+  --color-sundance: #cea358;
   --color-success: #0c9;
   --padding: clamp(1rem, 3vw, 2rem);
   --radius: 0.5rem;
+}
+
+.ghost {
+  --color-darkest: rgba(255, 255, 255, 0.9);
+  --color-darker: rgba(255, 255, 255, 0.7);
+  --color-half: rgba(255, 255, 255, 0.5);
+  --color-light: rgba(255, 255, 255, 0.1);
+  --color-lighter: rgba(255, 255, 255, 0.05);
+  --color-lightest: rgb(63, 83, 73); /* #fff */
 }
 
 * {
@@ -120,7 +130,11 @@ section {
 }
 
 .button:hover {
-  opacity: 0.9;
+  background: var(--color-sundance);
+}
+
+i {
+  color: var(--color-sundance);
 }
 
 /* Page Layout */
@@ -176,7 +190,7 @@ section .layer-inset {
 .badge {
   align-self: flex-start;
   aspect-ratio: 3/4;
-  background: #cea358;
+  background: var(--color-sundance);
   border-radius: var(--radius);
   height: 5.5rem;
   object-fit: contain;
@@ -403,7 +417,23 @@ video {
 
 /* Solution */
 
+#solution .layer-inset {
+  background: var(--color-sundance);
+  border-radius: 2rem;
+  padding: clamp(2rem, 3vw, 4rem);
+}
+#solution .lede {
+  color: unset;
+}
+#solution a {
+  color: var(--color-sundance);
+  margin: 1rem 0 0;
+}
+
 .solution-card {
+  background: var(--color-nandor);
+  border: unset;
+  color: var(--color-darkest);
   gap: 4rem;
 }
 
@@ -515,9 +545,23 @@ video {
 
 /* Results */
 
-.results-image {
+#jail-image {
   aspect-ratio: 2 / 1;
   border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+#jail-image::before {
+  background: var(--color-sundance);
+  content: '';
+  inset: 0;
+  mix-blend-mode: color;
+  position: absolute;
+}
+
+#jail-image img {
+  height: 100%;
   object-fit: cover;
   width: 100%;
 }
@@ -544,10 +588,15 @@ video {
 
 .result-numbers {
   align-items: center;
+  color: var(--color-half);
   display: flex;
   font-size: 2rem;
   font-weight: 500;
   gap: 0.5rem;
+}
+.result-numbers i,
+.result-change i {
+  color: inherit;
 }
 
 .result-to,
