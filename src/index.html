@@ -36,10 +36,21 @@
 <section class="layer" id="video">
   <div class="layer-inset">
     <div class="video-container">
-      <video
-        poster="https://res.cloudinary.com/moona/image/upload/q_auto/v1755806027/Aspen/aspen-tv-wall_oxnvko.png"
-      >
-        <source src="#" type="video/mp4" />
+      <video autoplay loop muted playsinline>
+        <source
+          media="(max-width: 640px)"
+          src="https://res.cloudinary.com/moona/video/upload/q_auto:low,w_640/v1759775726/Aspen/aspen-promo-oct6-preview_qktn4r.mp4"
+          type="video/mp4"
+        />
+        <source
+          media="(max-width: 1280px)"
+          src="https://res.cloudinary.com/moona/video/upload/q_auto:good,w_1280/v1759775726/Aspen/aspen-promo-oct6-preview_qktn4r.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="https://res.cloudinary.com/moona/video/upload/q_auto/v1759775726/Aspen/aspen-promo-oct6-preview_qktn4r.mp4"
+          type="video/mp4"
+        />
       </video>
       <div class="play-button">
         <i class="fas fa-play"></i>

@@ -79,3 +79,16 @@ ScrollReveal().reveal('.timeline-item', {
   // viewFactor: 0.5,
   viewOffset: { bottom: 300 },
 })
+
+/* == Video Player == */
+
+const video = document.querySelector('#video video')
+const playButton = document.querySelector('#video .play-button')
+
+if (video && playButton) {
+  playButton.addEventListener('click', () => {
+    playButton.style.display = 'none'
+    video.controls = true
+    video.muted = false
+  })
+}
