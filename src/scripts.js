@@ -71,11 +71,17 @@ window.plausible =
 })(window, document)
 vector.load('7df217d1-de49-4aa0-b77b-06795247c6b4')
 
-ScrollReveal().reveal('.timeline-item', {
+const revealConfig = {
   cleanup: true,
   distance: '20%',
-  interval: 100,
+  interval: 50,
   origin: 'bottom',
+}
+
+ScrollReveal().reveal('.header-branding, nav a, .button, h1, h2, p, .benefit, .card, .quote-card, .problem, .burden, .feature', revealConfig)
+
+ScrollReveal().reveal('.timeline-item', {
+  ...revealConfig,
   // viewFactor: 0.5,
   viewOffset: { bottom: 300 },
 })
