@@ -14,12 +14,27 @@
   y.parentNode.insertBefore(t, y)
 })(window, document, 'clarity', 'script', 't5275yfblv')
 
-//plausible.io
-window.plausible =
-  window.plausible ||
-  function () {
-    ;(window.plausible.q = window.plausible.q || []).push(arguments)
-  }
+//postalytics.com
+var a
+var rc = new RegExp('_bn_d=([^;]+)')
+var rq = new RegExp('_bn_d=([^&#]*)', 'i')
+var aq = rq.exec(window.location.href)
+if (aq != null) a = aq
+else var ac = rc.exec(document.cookie)
+if (ac != null) a = ac
+if (a != null) {
+  var _bn_d = a[1]
+  ;(function () {
+    var pl = document.createElement('script')
+    pl.type = 'text/javascript'
+    pl.async = true
+    pl.src =
+      ('https:' == document.location.protocol ? 'https://app' : 'http://app') +
+      '.postaladmin.com/plDataEmbed.js'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(pl, s)
+  })()
+}
 
 /* == Deanonymizers == */
 
@@ -71,11 +86,20 @@ window.plausible =
 })(window, document)
 vector.load('7df217d1-de49-4aa0-b77b-06795247c6b4')
 
-ScrollReveal().reveal('.timeline-item', {
+const revealConfig = {
   cleanup: true,
   distance: '20%',
-  interval: 100,
+  interval: 50,
   origin: 'bottom',
+}
+
+ScrollReveal().reveal(
+  '.header-branding, nav a, .button, h1, h2, p, .benefit, .card, .quote-card, .problem, .burden, .feature',
+  revealConfig,
+)
+
+ScrollReveal().reveal('.timeline-item', {
+  ...revealConfig,
   // viewFactor: 0.5,
   viewOffset: { bottom: 300 },
 })
