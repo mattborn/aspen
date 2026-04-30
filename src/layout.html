@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,13 +29,30 @@
     ></script>
     <script defer src="scripts.js"></script>
     <link rel="stylesheet" href="styles.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-18126144354"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'AW-18126144354')
+      gtag('config', 'G-01HJX2MG86')
+    </script>
   </head>
   <body>
     <!-- Header -->
     <header class="layer">
       <div class="layer-inset">
         <div class="header-branding">
-          <img alt="Aspen Badge" class="badge" src="../assets/aspen-badge.png" />
+          <img
+            alt="Aspen Badge"
+            class="badge"
+            src="../assets/aspen-badge.png"
+          />
           <a href="/" class="logo">
             <img alt="Aspen" class="logo-img" src="../assets/aspen-logo.svg" />
             <div class="logo-business">Correctional Telehealth</div>
@@ -65,9 +82,17 @@
       <div class="layer-inset">
         <div class="footer-row">
           <div class="footer-branding">
-            <img alt="Aspen Badge" class="badge" src="../assets/aspen-badge.png" />
+            <img
+              alt="Aspen Badge"
+              class="badge"
+              src="../assets/aspen-badge.png"
+            />
             <a href="/" class="logo">
-              <img alt="Aspen" class="logo-img" src="../assets/aspen-logo.svg" />
+              <img
+                alt="Aspen"
+                class="logo-img"
+                src="../assets/aspen-logo.svg"
+              />
               <div class="logo-business">Correctional Telehealth</div>
             </a>
           </div>
@@ -91,5 +116,24 @@
         </div>
       </div>
     </footer>
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url !== 'undefined') window.location = url
+        }
+        gtag('event', 'conversion', {
+          event_callback: callback,
+          send_to: 'AW-18126144354/FNmKCKvlsaQcEOKGnMND',
+        })
+        return false
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href*="calendly.com"]').forEach(link => {
+          link.addEventListener('click', () =>
+            gtag_report_conversion(link.href),
+          )
+        })
+      })
+    </script>
   </body>
 </html>
