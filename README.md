@@ -2,7 +2,7 @@
 
 ## October edits
 
-- [ ] Finalize logo, vertical alternate color feels complete, a in a box? (Joey thinks is more confusing), word is a mark itself, don't jack with it let it be our mark, we did this process already
+- [ ] Finalize logo, vertical alternate color feels complete, a in a box? (Joey thinks is more confusing), word is a mark itself, don’t jack with it let it be our mark, we did this process already
 - [x] Move icon pairings above CTA, balance spacing, bigger? bolder?, ambulance, down trend arrow, handshake
 - [x] Add scroll reveal everywhere
 - [x] Try inverting quote

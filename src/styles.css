@@ -111,6 +111,7 @@ section {
   padding: 1rem 1.5rem;
   text-decoration: none;
   transition: opacity 0.2s;
+  white-space: nowrap;
 }
 
 .button:hover {
@@ -226,6 +227,10 @@ section .layer-inset {
 
 /* Header */
 
+header.layer {
+  container: header / inline-size;
+}
+
 header .layer-inset {
   align-items: center;
   display: flex;
@@ -239,9 +244,19 @@ nav {
   gap: 2rem;
 }
 
-.nav-tagline {
-  color: var(--color-half);
-  font-size: 0.875rem;
+#tagline {
+  align-self: center;
+  background: var(--color-light);
+  border-radius: 2rem;
+  color: var(--color-darker);
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+@container header (max-width: 64rem) {
+  #tagline {
+    display: none;
+  }
 }
 
 .nav-link {
@@ -249,6 +264,7 @@ nav {
   position: relative;
   text-decoration: none;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -286,7 +302,8 @@ nav {
 .eyebrow {
   color: var(--color-half);
   font-size: 1.25rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .hero-benefits {
@@ -314,14 +331,13 @@ nav {
 
 .cta-note {
   color: var(--color-half);
-  font-size: 0.875rem;
 }
 
 .ivy-callout {
-  background: var(--color-lighter);
+  background: var(--color-light);
   border-radius: var(--radius);
-  color: var(--color-half);
-  font-size: 0.875rem;
+  color: var(--color-darker);
+  font-size: 14px;
   padding: 0.75rem 1.25rem;
 }
 
@@ -366,6 +382,33 @@ nav {
   font-size: 1.25rem;
 }
 
+#videos {
+  align-self: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--padding);
+}
+
+.video {
+  display: flex;
+  flex: 1 1 24rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.video iframe {
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.video figcaption {
+  color: var(--color-half);
+  font-size: 14px;
+}
+
 .testimonials {
   align-self: stretch;
   display: flex;
@@ -389,7 +432,7 @@ nav {
 
 .testimonial blockquote {
   color: var(--color-darkest);
-  font: italic 1.125rem 'Georgia', serif;
+  font: italic 18px 'Georgia', serif;
   line-height: 1.5;
 }
 
@@ -450,6 +493,10 @@ nav {
   gap: clamp(2rem, 3vw, 3rem);
   text-align: left;
 }
+
+#burden h2 {
+  text-align: center;
+}
 #burden-grid {
   align-items: flex-start;
   display: flex;
@@ -501,17 +548,21 @@ nav {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.pillar ul {
+.pillar details {
+  border-bottom: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.7);
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  cursor: pointer;
 }
 
-.pillar li {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  line-height: 1.5;
+.pillar summary {
+  font-size: 1rem;
   padding: 0.5rem 0;
+}
+
+.pillar details p {
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0 0 0.5rem;
 }
 
 /* Timeline */
@@ -553,7 +604,7 @@ nav {
 
 .timeline-marker {
   color: var(--color-sundance);
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -564,11 +615,14 @@ nav {
 }
 
 /* Reprise */
-#reprise .eyebrow {
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.back-to-top {
+  color: var(--color-half);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.back-to-top:hover {
+  color: var(--color-darkest);
 }
 
 /* Footer */
@@ -705,13 +759,20 @@ nav {
 /* -- FAQ (faq.html) -- */
 
 /* FAQ */
-#faq-items {
+.faq-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 50rem;
+  text-align: left;
+  width: 100%;
+}
+
+.faq-items {
   border: 1px solid var(--color-light);
   border-radius: 1rem;
   cursor: pointer;
-  max-width: 50rem;
   overflow: hidden;
-  text-align: left;
 }
 
 details:not(:last-child) {
@@ -761,13 +822,9 @@ details p {
   }
 
   header nav {
+    align-items: flex-end;
     flex-direction: column;
     gap: 1rem;
-    text-align: right;
-  }
-
-  header .nav-link {
-    white-space: nowrap;
   }
 
   /* Global */
