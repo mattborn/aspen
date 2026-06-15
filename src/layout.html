@@ -100,9 +100,10 @@
           <a href="/about" class="nav-link {about-active}">About us</a>
           <a href="/faq" class="nav-link {faq-active}">FAQ</a>
         </nav>
+        <!-- Old link (restore ~July 2026): https://calendly.com/joey-ivycm/intro-to-aspen-inmate-medical-care-for-small-jails -->
         <a
           class="button"
-          href="https://calendly.com/joey-ivycm/intro-to-aspen-inmate-medical-care-for-small-jails"
+          href="https://calendar.app.google/aVbbTh8Jeba95UW97"
           target="_blank"
           >Book a call</a
         >
@@ -162,7 +163,10 @@
         return false
       }
       document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('a[href*="calendly.com"]').forEach(link => {
+        // Old selector (restore ~July 2026): 'a[href*="calendly.com"]'
+        document
+          .querySelectorAll('a[href*="calendar.app.google"]')
+          .forEach(link => {
           link.addEventListener('click', () =>
             gtag_report_conversion(link.href),
           )
