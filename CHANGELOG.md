@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-21
+
+### FAQ
+
+- **Medical Services**: Added “What happens if we need medical help after hours?” (24/7 on-call escalation process) and “How do I contact my medical care team when I need them?” (Blink messaging, nursing phone numbers, on-call line, email)
+- **Contact Us**: Removed “Do you have questions for a member of our team?”; renamed “Questions before signing up?” to “Questions?” with intro-call link, sales email, and direct sales line 801-560-7640; billing contact changed to accounting@aspencorrections.com
+- Updated JSON-LD schema to match (25 questions)
+
+## 2026-07-20
+
+### Global
+
+- **Type scale**: h3 raised to 2rem with the same tightened letter-spacing and leading as h1/h2
+- **Footer**: Added phone number (801) 560 7640 and reorganized into a four-corner layout — branding top-left, larger phone top-right, legal bottom-left, sales email bottom-right; copyright updated to “© 2026 Aspen Correctional Telehealth”; restored the aspen forest image below the footer content
+
+### Homepage
+
+- **Hero**: Reverted proof points from the checkmark design back to the thematic icons (ambulance, trend-down, phone)
+- **All pages**: Hid the “Learn More” secondary CTA (hero and reprise sections) until it can link to case studies
+- **Hero**: Ivy Medical callout link text changed from “Click here” to “Email sales”
+- **Social Proof**: Removed the “What changes when the right medical team shows up.” heading, updated Rosebud County transports stat from 80% to 90%, added 88% fewer medical transports stat to Washington State; added “Proven results” section heading with “Aspen partners” and “From the people who’ve been there.” subheadings, extra spacing between groups
+- **Testimonials**: Added quotes from Steven Barker (Jail Commander), Allen Dahl (Correctional Officer), and Lucas Morrison (HCA & Re-Entry Officer) as the first three cards, followed by the original three; section is now a manually controlled carousel with previous/next arrows (no auto-advance), cards top-aligned at natural height with peek sizing on mobile, first card wider on large screens
+- **Section order**: Moved Burden (“Without the right medical team…”) above Problems (“Nobody Built This for You.”) to match the brief’s flow, and removed the “And” from the Burden headline
+- **Pillars**: Removed the lightbulb section divider above (the yellow card stands on its own); dropdowns now open on hover (tap to toggle on touch devices), tightened row spacing and accordion chevron alignment, grid gap reduced to 1rem, columns now step strictly 4 → 2×2 → 1 (never 3+1)
+- **Timeline**: Split into two rows of three, connected by a continuous S-shaped line with dots centered on it; removed periods from headings and retitled Month 1 to “Fewer meds, shorter med pass”
+- **Reprise**: “Download a one-pager” secondary button prepared but commented out until the PDF link exists; removed “No commitment required.” from the CTA note
+
 ## 2026-06-13
 
 ### Global
@@ -79,4 +106,3 @@
 - **SEO title**: Should change from “Aspen - Inmate Medical Care” to “Jail Medical Services for Small County Jails | Aspen Corrections” (requires build.js change)
 - **Meta description**: Should update to “Aspen provides 24/7 telehealth medical care for jails under 120 beds. Reduce transports, cut liability, and stop asking officers to make medical decisions. Serving county jails across the US.” (requires build.js change)
 - **Dead links**: Privacy and Terms in footer link to `#` — need actual URLs
-- **Phone number**: Footer should include a phone number per content strategist — need the number

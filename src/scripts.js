@@ -104,6 +104,28 @@ ScrollReveal().reveal('.timeline-item', {
   viewOffset: { bottom: 300 },
 })
 
+/* == Pillar Dropdowns == */
+
+if (matchMedia('(hover: hover)').matches)
+  document.querySelectorAll('.pillar details').forEach(d => {
+    d.addEventListener('mouseenter', () => (d.open = true))
+    d.addEventListener('mouseleave', () => (d.open = false))
+  })
+
+/* == Testimonial Carousel == */
+
+const testimonials = document.querySelector('.testimonials')
+
+if (testimonials) {
+  const scrollTestimonials = dir => {
+    const card = testimonials.querySelector('.testimonial')
+    const gap = parseFloat(getComputedStyle(testimonials).gap)
+    testimonials.scrollBy({ behavior: 'smooth', left: dir * (card.offsetWidth + gap) })
+  }
+  document.getElementById('testimonials-prev').addEventListener('click', () => scrollTestimonials(-1))
+  document.getElementById('testimonials-next').addEventListener('click', () => scrollTestimonials(1))
+}
+
 /* == Video Player == */
 
 const video = document.querySelector('#video video')
