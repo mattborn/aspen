@@ -6,14 +6,17 @@ const layout = fs.readFileSync('./src/layout.html', 'utf8')
 // Page configurations
 const pages = {
   'index.html': {
-    title: 'Aspen - Inmate Medical Care',
-    description: 'Inmate Healthcare Specifically Designed for Small Jails.',
+    url: '/',
+    title: 'Jail Medical Services for Small County Jails | Aspen Corrections',
+    description:
+      'Aspen provides 24/7 telehealth medical care for jails under 120 beds. Reduce transports, cut liability, and stop asking officers to make medical decisions.',
     homeActive: 'active',
     telehealthActive: '',
     aboutActive: '',
     faqActive: '',
   },
   'telehealth.html': {
+    url: '/telehealth',
     title: 'Why Telehealth - Aspen',
     description: 'Why telehealth is the best solution for small jails.',
     homeActive: '',
@@ -22,6 +25,7 @@ const pages = {
     faqActive: '',
   },
   'about.html': {
+    url: '/about',
     title: 'About Us - Aspen',
     description: 'About Aspen - Correctional Medical Care',
     homeActive: '',
@@ -30,12 +34,31 @@ const pages = {
     faqActive: '',
   },
   'faq.html': {
+    url: '/faq',
     title: 'FAQ - Aspen',
     description: 'Frequently asked questions about Aspen.',
     homeActive: '',
     telehealthActive: '',
     aboutActive: '',
     faqActive: 'active',
+  },
+  'book.html': {
+    url: '/book',
+    title: 'Book a Call - Aspen',
+    description: 'Schedule a free 30-minute intro call with the Aspen team.',
+    homeActive: '',
+    telehealthActive: '',
+    aboutActive: '',
+    faqActive: '',
+  },
+  'booked.html': {
+    url: '/booked',
+    title: 'Booking Confirmed - Aspen',
+    description: 'Your call has been scheduled. We look forward to meeting with you!',
+    homeActive: '',
+    telehealthActive: '',
+    aboutActive: '',
+    faqActive: '',
   },
 }
 
@@ -56,8 +79,9 @@ fs.readdirSync('./src').forEach(file => {
     const config = pages[file]
     
     const html = layout
-      .replace('{title}', config.title)
-      .replace('{description}', config.description)
+      .replace(/{title}/g, config.title)
+      .replace(/{description}/g, config.description)
+      .replace(/{url}/g, config.url)
       .replace('{content}', content)
       .replace(/{home-active}/g, config.homeActive)
       .replace(/{telehealth-active}/g, config.telehealthActive)

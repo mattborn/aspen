@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-24
+
+### Conversion Tracking (per agency spec)
+
+- **New /book page**: Calendly now embeds inline on our domain (branded colors) instead of opening in a new tab, so the pixel can see the booking flow; fires InitiateCheckout + the existing Google click conversion on page view, AddToCart when a time is picked
+- **New /booked page**: booking-confirmation landing page — set Calendly’s confirmation redirect to https://aspencorrections.com/booked with “Pass event details” enabled; fires the Meta Schedule event with the invitee UUID as the dedup event ID
+- **Ad attribution**: fbclid/gclid/UTMs captured to sessionStorage on landing and forwarded into the Calendly URL (fbc via utm_content, fbp via salesforce_uuid, gclid via utm_term) so Calendly’s webhook echoes them back for server-side attribution
+- **All pages**: every Book a Call CTA now routes to /book instead of Calendly directly
+
+### Global
+
+- **Link previews**: Added Open Graph and Twitter card meta tags to every page — per-page title, description, and canonical URL, with the new 1200×630 social card (assets/aspen-og-preview.png); added og:site_name
+- **SEO**: Adopted the strategist’s homepage title (“Jail Medical Services for Small County Jails | Aspen Corrections”) and meta description (trimmed to 152 characters), resolving the May “Needs discussion” items
+
 ## 2026-07-21
 
 ### FAQ
@@ -100,9 +114,3 @@
 
 - Updated bed count references from 80 to 120
 - Updated Ivy CM experience from “14 years” to “15+ years”
-
-### Needs discussion
-
-- **SEO title**: Should change from “Aspen - Inmate Medical Care” to “Jail Medical Services for Small County Jails | Aspen Corrections” (requires build.js change)
-- **Meta description**: Should update to “Aspen provides 24/7 telehealth medical care for jails under 120 beds. Reduce transports, cut liability, and stop asking officers to make medical decisions. Serving county jails across the US.” (requires build.js change)
-- **Dead links**: Privacy and Terms in footer link to `#` — need actual URLs

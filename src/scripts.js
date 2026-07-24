@@ -104,6 +104,61 @@ ScrollReveal().reveal('.timeline-item', {
   viewOffset: { bottom: 300 },
 })
 
+/* == Ad Attribution (ref/Aspen-Conversion-Tracking-Implementation-Spec.pdf) == */
+
+const AD_PARAMS = ['fbclid', 'gclid', 'utm_campaign', 'utm_content', 'utm_medium', 'utm_source', 'utm_term']
+const landingParams = new URLSearchParams(location.search)
+AD_PARAMS.forEach(p => landingParams.get(p) && sessionStorage.setItem(p, landingParams.get(p)))
+
+const adParam = p => landingParams.get(p) || sessionStorage.getItem(p) || ''
+const cookie = n => (document.cookie.match('(^|;)\\s*' + n + '\\s*=\\s*([^;]+)') || [])[2] || ''
+
+const buildCalendlyUrl = baseUrl => {
+  const fbc = cookie('_fbc') || (adParam('fbclid') && 'fb.1.' + Date.now() + '.' + adParam('fbclid'))
+  const u = new URL(baseUrl)
+  if (fbc) u.searchParams.set('utm_content', fbc) // carries fbc
+  if (cookie('_fbp')) u.searchParams.set('salesforce_uuid', cookie('_fbp')) // carries fbp
+  if (adParam('gclid')) u.searchParams.set('utm_term', adParam('gclid')) // carries gclid
+  if (adParam('utm_source') || fbc) u.searchParams.set('utm_source', adParam('utm_source') || 'meta')
+  if (adParam('utm_medium') || fbc) u.searchParams.set('utm_medium', adParam('utm_medium') || 'paid_social')
+  if (adParam('utm_campaign')) u.searchParams.set('utm_campaign', adParam('utm_campaign'))
+  return u.toString()
+}
+
+/* == Booking Page == */
+
+const booking = document.getElementById('booking')
+
+if (booking) {
+  Calendly.initInlineWidget({
+    parentElement: booking,
+    resize: true,
+    url: buildCalendlyUrl(
+      'https://calendly.com/joey-ivycm/intro-to-aspen-inmate-medical-care-for-small-jails?hide_gdpr_banner=1&primary_color=cea358&text_color=3f5349',
+    ),
+  })
+  fbq('track', 'InitiateCheckout', { content_name: 'Booking page' })
+  gtag_report_conversion()
+  addEventListener('message', e => {
+    if (e.origin !== 'https://calendly.com') return
+    if (e.data?.event === 'calendly.page_height') booking.style.height = e.data.payload.height
+    if (e.data?.event === 'calendly.date_and_time_selected')
+      fbq('track', 'AddToCart', { content_name: 'Booking started' })
+  })
+}
+
+/* == Booking Confirmed == */
+
+if (document.getElementById('booked')) {
+  const invitee = landingParams.get('invitee_uuid')
+  fbq(
+    'track',
+    'Schedule',
+    { content_name: landingParams.get('event_type_name') || 'Booking confirmed' },
+    invitee ? { eventID: invitee } : undefined,
+  )
+}
+
 /* == Pillar Dropdowns == */
 
 if (matchMedia('(hover: hover)').matches)

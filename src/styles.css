@@ -788,6 +788,13 @@ nav {
   font-size: 14px;
 }
 
+/* -- Book (book.html) -- */
+
+#booking {
+  align-self: stretch;
+  height: 44rem;
+}
+
 /* -- Why Telehealth (telehealth.html) -- */
 
 /* Image */
@@ -938,6 +945,7 @@ details p {
 
   header .layer-inset {
     align-items: unset;
+    flex-wrap: wrap;
   }
 
   header .button {
@@ -946,6 +954,7 @@ details p {
 
   header nav {
     align-items: flex-end;
+    flex: 1;
     flex-direction: column;
     gap: 1rem;
   }
