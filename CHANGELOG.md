@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-09-08
+
+### Analytics
+
+- **GA4**: Added a second `gtag('config')` line for measurement ID G-HDKQ281EGX so the “Aspen Website” GA4 property in Joey’s Analytics account starts receiving data. The existing G-01HJX2MG86 line and the Google Ads (AW-18126144354) conversion tracking are unchanged; nothing else on the page was touched. (Edit by Joey)
+
 ## 2026-07-24
 
 ### Conversion Tracking (per agency spec)
