@@ -193,3 +193,29 @@ if (video && playButton) {
     video.muted = false
   })
 }
+
+/* == FAQ Answer Videos == */
+
+document.querySelectorAll('.faq-video').forEach(box => {
+  const button = box.querySelector('button')
+  const { video, start, end } = box.dataset
+
+  button.addEventListener('click', () => {
+    const iframe = document.createElement('iframe')
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture; web-share'
+    iframe.allowFullscreen = true
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin'
+    const clip = start ? `&start=${start}&end=${end}` : ''
+    iframe.src = `https://www.youtube.com/embed/${video}?autoplay=1&rel=0${clip}`
+    iframe.title = box.closest('details').querySelector('summary').textContent.trim()
+    const figure = document.createElement('figure')
+    figure.className = 'video'
+    figure.append(iframe)
+    button.replaceWith(figure)
+  })
+
+  // Stop the video when its question is closed
+  box.closest('details').addEventListener('toggle', e => {
+    if (!e.target.open && !box.contains(button)) box.replaceChildren(button)
+  })
+})
