@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-12
+
+### FAQ
+
+- **Leadership video**: Embedded the “Aspen Correctional Telehealth FAQs” YouTube video (https://www.youtube.com/watch?v=Vdj6lNooPzY) directly under the page heading, sized to match the FAQ list, with the caption “Prefer to watch? Our leadership team answers seven of the most common questions. More questions and answers are below.” Checked on phone, tablet, and desktop. (Edit by Joey)
+- **Answer clips (groundwork only)**: Added styles and a small script for an optional “Watch the answer” button inside individual FAQ answers, for short per-question clips coming later. Nothing visible changes until a clip is added; the video only loads when someone clicks. (Edit by Joey)
+
 ## 2026-09-08
 
 ### Analytics

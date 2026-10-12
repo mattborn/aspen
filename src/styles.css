@@ -1029,3 +1029,37 @@ details p {
     flex-direction: column;
   }
 }
+
+/* FAQ videos */
+.faq-full-video {
+  max-width: 50rem;
+  width: 100%;
+}
+
+.faq-video {
+  cursor: auto;
+  padding: 0 var(--padding) var(--padding);
+}
+
+.faq-video button {
+  align-items: center;
+  background: none;
+  border: 1px solid var(--color-light);
+  border-radius: 2rem;
+  color: var(--color-nandor);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 15px;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.faq-video button:hover {
+  background: var(--color-lightest);
+  border-color: var(--color-half);
+}
+
+.faq-video button span {
+  color: var(--color-half);
+}
