@@ -1031,9 +1031,31 @@ details p {
 }
 
 /* FAQ videos */
+.layer:has(.faq-full-video) {
+  padding-bottom: 0;
+}
+
+.layer:has(.faq-full-video) + .layer {
+  padding-top: 2rem;
+}
+
 .faq-full-video {
-  max-width: 50rem;
+  max-width: 40rem;
   width: 100%;
+}
+
+.faq-jump {
+  color: var(--color-nandor);
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.faq-jump i {
+  font-size: 0.85em;
+}
+
+html:has(.faq-jump) {
+  scroll-behavior: smooth;
 }
 
 .faq-video {
